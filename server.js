@@ -10,7 +10,7 @@ const userRouter = require('./routers/userRouter'); // import User Router
 
 const port = process.env.PORT || 3000; // declare static port
 const server = express(); // connect server to express
-poop
+
 
 // Connect to DB 
 // Local Testing w/ Postman: mongodb://localhost/notesDB
