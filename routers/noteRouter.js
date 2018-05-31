@@ -3,7 +3,7 @@ const router = require('express').Router();
 const Note = require('../models/noteModel');
 
 // Endpoint (1) Post Note
-router.post('/', function post(req, res) {
+router.post('/', (req, res) => {
     const noteData = req.body;
     const note = new Note(noteData);
 
@@ -17,12 +17,12 @@ router.post('/', function post(req, res) {
         });
 });
 
-// // Endpoint (2) Get All Notes
-// router.get('/', function get(req, res) {
-//     Note.find().then(notes => {
-//         res.status(200).json(notes);
-//     });
-// });
+// Endpoint (2) Get All Notes
+router.get('/', (req, res) => {
+    Note.find().then(notes => {
+        res.status(200).json(notes);
+    });
+});
 
 // // Endpoint (3) Get Notes by Id
 // router.get('/:id', (req, res) => {
