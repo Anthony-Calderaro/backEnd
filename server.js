@@ -14,9 +14,9 @@ const server = express(); // connect server to express
 
 // Connect to DB 
 // Local Testing w/ Postman: mongodb://localhost/notesDB
-// Heroku & MLAB Deploy: mongodb:anthony:t0nyj0n4!@ds016058.mlab.com:16058/backend-notes
+// Heroku & MLAB Deploy: mongodb://<dbuser>:<dbpassword>@ds016058.mlab.com:16058/backend-notes
 mongoose
-.connect('mongodb:anthony:t0nyj0n4!@ds016058.mlab.com:16058/backend-notes')
+.connect('mongodb:ajc-sorin@protonmail.com:mlabt0nyj0n4!@ds016058.mlab.com:16058/backend-notes')
 .then(mongo => {
     console.log('Properly connected to the notes DB. Well done!');
 })
