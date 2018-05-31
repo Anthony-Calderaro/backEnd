@@ -25,17 +25,17 @@ router.get('/', (req, res) => {
 });
 
 // // Endpoint (3) Get Notes by Id
-// router.get('/:id', (req, res) => {
-//     const { id } = req.params;
+router.get('/:id', (req, res) => {
+    const { id } = req.params;
 
-//     Note.findById(id)
-//     .then(note => {
-//         res.status(200).json(note);
-//     })
-//     .catch(err => {
-//         res.status(500).json(err);
-//     });
-// });
+    Note.findById(id)
+    .then(notes => {
+        res.status(202).json(notes);
+    })
+    .catch(err => {
+        res.status(500).json(err);
+    });
+});
 
 // // Endpoint (4) Delete Notes by Id
 // router.delete('/:id', (req, res) => {
