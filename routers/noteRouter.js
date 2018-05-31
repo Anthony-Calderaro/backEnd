@@ -50,15 +50,19 @@ router.delete('/:id', (req, res) => {
     });
 });
 
-// // Endpoint (5) Edit Notes by Id
-// router.put('/:id', (req, res) => {
-//     const { id } = req.params;
+// Endpoint (5) Edit Notes by Id
+router.put('/:id', (req, res) => {
+    const { id } = req.params;
+    const updatedNote = req.body;
+    const options = {
+        new: true,
+    };
 
-//     Note.findByIdAndUpdate(id).then(note => {
-//         res.status(200).json(note)
-//     }).catch(err => {
-//         res.status(500).json(err);
-//     });
-// })
+    Note.findByIdAndUpdate(id, updatedNote, options).then(update => {
+        res.status(200).json(update)
+    }).catch(err => {
+        res.status(500).json(err);
+    });
+})
 
 module.exports = router;
