@@ -2,7 +2,7 @@
   "name": "githubBackend",
   "version": "1.0.0",
   "engines": {
-    "node": "8.11.2"
+    "node": "10.3.0"
   },
   "description": "",
   "main": "server.js",
