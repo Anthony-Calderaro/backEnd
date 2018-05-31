@@ -37,18 +37,18 @@ router.get('/:id', (req, res) => {
     });
 });
 
-// // Endpoint (4) Delete Notes by Id
-// router.delete('/:id', (req, res) => {
-//     const id = req.params;
+// Endpoint (4) Delete Notes by Id
+router.delete('/:id', (req, res) => {
+    const { id } = req.params;
 
-//     Note.findByIdAndRemove(id)
-//     .then(note => { 
-//         res.status(200).json(note);
-//     })
-//     .catch(err => {
-//         res.status(404).json(err);
-//     });
-// });
+    Note.findByIdAndRemove(id)
+    .then(notes => { 
+        res.status(200).json(notes);
+    })
+    .catch(err => {
+        res.status(404).json(err);
+    });
+});
 
 // // Endpoint (5) Edit Notes by Id
 // router.put('/:id', (req, res) => {
